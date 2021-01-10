@@ -10,10 +10,36 @@
   <button mat-button color="warn" [disabled]="!isBtnEnable">My button 2</button>
 
   <button mat-button color="warn" (click)="disable()"
-          [disabled]="!isBtnEnable">Disable</button>
+          [disabled]="!isBtnEnable">Disable
+  </button>
   <mat-progress-spinner
     color="primary"
     [mode]="spinnerMode"
     value="50">
   </mat-progress-spinner>
+</section>
+
+<section>
+  <mat-card>
+    <mat-card-content>
+      <p>
+        <mat-checkbox color="warn" (change)="cbChange($event)">Disable / Enable</mat-checkbox>
+      </p>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Cars</mat-label>
+        <mat-select matNativeControl required
+                    [disabled]="isSelectDisabled" (selectionChange)="selectionChange($event)">
+          <mat-option value="1">Volvo</mat-option>
+          <mat-option value="2">Saab</mat-option>
+          <mat-option value="3">Mercedes</mat-option>
+          <mat-option value="4">Audi</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <p>Selected option {{ selectedOption }}</p>
+    </mat-card-actions>
+  </mat-card>
 </section>
