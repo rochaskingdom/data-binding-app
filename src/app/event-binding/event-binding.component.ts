@@ -10,6 +10,7 @@ export class EventBindingComponent implements OnInit {
   i = 0;
   isBtnEnable = true;
   selectedOption = 1;
+  inputName = 'jhon';
   buttonName = 'My Button';
   isSelectDisabled = false;
   spinnerMode = 'determinate';
@@ -47,5 +48,10 @@ export class EventBindingComponent implements OnInit {
     console.log(event);
     this.selectedOption = event.value;
   }
+
+  // inputEvent(event): void {
+  //   console.log(event.target.value);
+  //   console.log(this.inputName);
+  // }
 
 }
